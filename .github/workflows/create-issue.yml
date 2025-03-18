@@ -1,0 +1,17 @@
+name: create-issue
+
+on:
+  schedule:
+    - cron: '0 0 1 1 *'
+
+jobs:
+  create-issue:
+    name: Create GitHub Issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
