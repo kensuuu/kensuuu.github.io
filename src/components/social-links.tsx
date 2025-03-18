@@ -1,31 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { SiQiita, SiZenn } from "react-icons/si";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiZenn } from "react-icons/si";
 
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/yourusername",
+    url: "https://github.com/kensuuu/",
     icon: FaGithub,
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/yourusername",
-    icon: FaTwitter,
-  },
-  {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/kensuuu11/",
     icon: FaLinkedin,
   },
   {
-    name: "Qiita",
-    url: "https://qiita.com/yourusername",
-    icon: SiQiita,
-  },
-  {
     name: "Zenn",
-    url: "https://zenn.dev/yourusername",
+    url: "https://zenn.dev/kensuuu/",
     icon: SiZenn,
   },
 ];
