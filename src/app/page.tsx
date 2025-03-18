@@ -3,24 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { FaLaptopCode, FaTools, FaUser } from "react-icons/fa";
 import { SocialLinks } from "@/components/social-links";
-
-const career = [
-  {
-    year: "2019",
-    title: "Graduated from Ritsumeikan University",
-    description: "Earned a Bachelor's degree in Computer Science."
-  },
-  {
-    year: "2020",
-    title: "Software Engineer at Axross Co., Ltd.",
-    description: "Worked on various software development projects."
-  },
-  {
-    year: "2022",
-    title: "Software Engineer at Asoview Inc.",
-    description: "Developed and maintained both web and mobile applications."
-  }
-];
+import { experiences, skills } from "@/constants";
 
 export default function Home() {
   return (
@@ -53,14 +36,14 @@ export default function Home() {
         <Card>
           <CardContent>
             <div className="space-y-6">
-              {career.map((item) => (
-                <div key={item.year} className="grid grid-cols-1 md:grid-cols-8 gap-2">
+              {experiences.map((experience) => (
+                <div key={experience.year} className="grid grid-cols-1 md:grid-cols-8 gap-2">
                   <div className="md:col-span-1 text-muted-foreground font-medium">
-                    {item.year}
+                    {experience.year}
                   </div>
                   <div className="md:col-span-7">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <h3 className="font-semibold">{experience.title}</h3>
+                    <p className="text-muted-foreground">{experience.description}</p>
                   </div>
                 </div>
               ))}
@@ -76,63 +59,21 @@ export default function Home() {
           <h2 className="text-3xl font-bold">Skills</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>Frontend</CardTitle>
-              <CardDescription>Web technologies I work with</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>React</li>
-                <li>TypeScript</li>
-              </ul>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Backend</CardTitle>
-              <CardDescription>Server-side technologies</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Spring Boot / Spring Webflux</li>
-                <li>Java</li>
-                <li>gRPC</li>
-                <li>MySQL / PostgreSQL</li>
-                <li>Elasticsearch</li>
-              </ul>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Mobile Development</CardTitle>
-              <CardDescription>Android development stack</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Android</li>
-                <li>Jetpack Compose</li>
-                <li>Kotlin</li>
-                <li>Firebase</li>
-              </ul>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Tools & Infrastructure</CardTitle>
-              <CardDescription>Development and monitoring tools</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Git</li>
-                <li>CircleCI</li>
-                <li>DataDog</li>
-                <li>Google Analytics</li>
-                <li>Figma</li>
-                <li>IntelliJ IDEA / Android Studio</li>
-              </ul>
-            </CardContent>
-          </Card>
+          {skills.map((skill) => (
+            <Card key={skill.name}>
+              <CardHeader>
+                <CardTitle>{skill.name}</CardTitle>
+                <CardDescription>{skill.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                  {skill.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 

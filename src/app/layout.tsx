@@ -10,16 +10,16 @@ export const metadata: Metadata = {
   title: "Kensuuu | Software Engineer Portfolio",
   description: "Showcasing my work, skills, and projects as a software engineer specializing in web and mobile development.",
   keywords: ["Software Engineer", "Web Developer", "Mobile Developer", "Portfolio", "Kensuuu"],
-  authors: [{ name: "Kensuuu", url: "https://kensuuu.github.io/" }],
+  authors: [{ name: "Kensuuu", url: "https://kensuuu.github.io" }],
   robots: "index, follow",
   openGraph: {
     title: "Kensuuu | Software Engineer Portfolio",
     description: "A portfolio website showcasing my work, skills, and projects.",
-    url: "https://kensuuu.github.io/",
+    url: "https://kensuuu.github.io",
     siteName: "Kensuuu Portfolio",
     images: [
       {
-        url: "https://kensuuu.github.io/avatar.png/",
+        url: "https://kensuuu.github.io/avatar.png",
         width: 1200,
         height: 630,
         alt: "Kensuuu's Portfolio"
